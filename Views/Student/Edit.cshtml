@@ -1,0 +1,35 @@
+﻿@model Student
+<form method="post">
+
+    <div class="border p-3 mt-4">
+        <h2 class="text-primary ">Edit </h2>
+    </div>
+    <div class="mb-3">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="DateOfBirth" class="control-label"></label>
+        <input asp-for="DateOfBirth" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Gender" class="control-label"></label>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TeacherName" class="control-label"></label>
+        <select asp-for="T_Id" class="form-control" asp-items="@(new SelectList(ViewBag.Teachers,"Id","FirstName"))">
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary" style="100px">Edit</button>
+    </div>
+
+</form>
+
